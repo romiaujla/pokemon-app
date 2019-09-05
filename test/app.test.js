@@ -12,4 +12,12 @@ describe(`GET /types`, () => {
                 expect(res.body.length >= 1).to.be.true;
             })
     })
+});
+
+describe(`GET /pokemon`, () => {
+    it(`Get the list pokemon`, () => {
+        return request(app)
+            .get('/pokemon')
+            .expect(200);
+    })
 })
