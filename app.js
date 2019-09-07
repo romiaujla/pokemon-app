@@ -1,12 +1,16 @@
 require('dotenv').config();
-const cors = require('cors');
 const express = require('express');
 const morgan = require('morgan');
+const helmet = require('helmet');
+const cors = require('cors');
 const POKEDEX = require('./pokedex.json');
 
 const app = express();
-app.use(morgan('dev'));
+const morganSetting  = process.env.NODE_ENV === 'production' ? 'tiny' : 'common';
+app.use(morgan(morganSetting));
+app.use(helmet());
 app.use(cors());
+
 
 const VALIDTYPES = [
     `Bug`, 
