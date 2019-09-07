@@ -13,6 +13,9 @@
     "url": "git+https://github.com/romiaujla/pokemon-app.git"
   },
   "keywords": [],
+  "engines": {
+    "node": "10.16.0"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
